@@ -7,15 +7,18 @@ public class Gladiator {
     public int dexterity;
     public int level;
     public int charisma;
-    public final int basicAttack;
+    public int basicAttack;
     public final int basicHp;
     public final boolean haveShield;
+    private Object speed;
+    private Object basicHP;
+    private boolean critChance;
 
     public Gladiator(
             int constitution, int strength,
             int xp, int dexterity,
             int level, int charisma,
-            int basicAttack, int basicHp,
+            int basicAttack, double v, int basicHp,
             boolean haveShield
     ) {
         this.constitution = constitution;
@@ -87,5 +90,56 @@ public class Gladiator {
 
     public boolean isHaveShield() {
         return haveShield;
+    }
+
+    public int attack() {
+    }
+    public int winBattle(Object xp) {
+    }
+
+    public void takeDamage(int damage) {
+    }
+
+    public boolean isAlive() {
+        boolean alive;
+        return alive;
+    }
+
+    public void setAlive(boolean alive) {
+        this.alive = alive;
+    }
+
+    public void loseBattle() {
+    }
+
+    public void negotiate() {
+    }
+
+    public Object getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(Object speed) {
+        this.speed = speed;
+    }
+
+    public void setBasicAttack(int basicAttack) {
+        this.basicAttack = basicAttack;
+    }
+
+    public Object getBasicHP() {
+        return basicHP;
+    }
+
+    public void setBasicHP(Object basicHP) {
+        this.basicHP = basicHP;
+    }
+
+    public boolean getCritChance() {
+        return critChance;
+    }
+
+    public void setCritChance(boolean critChance) {
+        this.critChance = critChance;
     }
 }

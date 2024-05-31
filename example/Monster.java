@@ -1,9 +1,12 @@
 package org.example;
 
 public class Monster {
+
     public int hp;
     public int attack;
     public String name;
+    private Object speed;
+    private Object xp;
 
     public Monster(int hp, int attack, String name) {
         this.hp = hp;
@@ -11,27 +14,32 @@ public class Monster {
         this.name = name;
     }
 
-    public int getHp() {
-        return hp;
+    public Monster(String monsterName, int attack, int i, int i1, int i2, int i3, int i4, int i5, double v, boolean b) {
     }
 
-    public void setHp(int hp) {
-        this.hp = hp;
+
+    public void takeDamage(int damage) {
     }
 
-    public int getAttack() {
-        return attack;
+    public boolean isAlive() {
     }
 
-    public void setAttack(int attack) {
-        this.attack = attack;
+    public Object getXp() {
+        return xp;
     }
 
-    public String getName() {
-        return name;
+    public void setXp(Object xp) {
+        this.xp = xp;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public int attack() {
+    }
+
+    public Object getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(Object speed) {
+        this.speed = speed;
     }
 }
