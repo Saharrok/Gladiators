@@ -4,19 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 class Main {
-    private int constitution;
-    private int strength;
-    private double xp;
-    private int dexterity;
-    private int level;
-    private int basicAttack;
-    private int basicHP;
-    private double critChance;
-    private int charisma;
-    private boolean haveShield;
-    private int currentHP;
-    private int speed;
-
+    
     public int main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -44,27 +32,8 @@ class Main {
                 System.out.println("Что то пошло не так");
         }
 
-
-        public void takeDamage ( double damage){
-            this.currentHP -= damage;
-            if (this.currentHP < 0) {
-                this.currentHP = 0;
-            }
-        }
-
-        public boolean isAlive () {
-            return this.currentHP > 0
-        }
-
-        public double getXp () {
-            return xp;
-        }
-    }
-
-                Scanner scanner = new Scanner(System.in);
-
-
-            Gladiator gladiator = null;
+        scanner = new Scanner(System.in);
+        gladiator = null;
                 while (true) {
                     System.out.println("Your choise?");
                     System.out.println("1 Fight");
@@ -72,16 +41,16 @@ class Main {
                     System.out.println("3 Change characteristics");
                     int value = scanner.nextInt();
                     if (value == 1) {
-                        fight(gladiator);
+                        fight(gladiator, xp);
                     } else if (value == 2) {
-                        levelUp(gladiator);
+                        levelUp();
                     } else if (value == 3) {
                         changeCharacteristic(gladiator, scanner);
                     }
                 }
             }
 
-            private static void fight(Gladiator gladiator) {
+            private static void fight(Gladiator gladiator, Object xp) {
                 Random random = new Random();
                 String monsterName = null;
                 Monster monster = new Monster(monsterName, 5, 5, 3, 10, 1, 7, 50, 0.2, false);
@@ -101,7 +70,7 @@ class Main {
                             monster.takeDamage(damage);
                             if (!monster.isAlive()) {
                                 System.out.println("Gladiator win");
-                                gladiator.winBattle(monster.getXp());
+                                gladiator.winBattle(monster.getXp(xp));
                                 break;
                             }
                             damage = monster.attack();
@@ -132,7 +101,7 @@ class Main {
                                 monster.takeDamage(gladiatorDamage);
                                 if (!monster.isAlive()) {
                                     System.out.println("Gladiator win");
-                                    gladiator.winBattle(monster.getXp());
+                                    gladiator.winBattle(monster.getXp(xp));
                                     break;
                                 }
                             }
@@ -156,7 +125,7 @@ class Main {
                                 monster.takeDamage(gladiatorDamage);
                                 if (!monster.isAlive()) {
                                     System.out.println("Gladiator win");
-                                    gladiator.winBattle(monster.getXp());
+                                    gladiator.winBattle(monster.getXp(xp));
                                     break;
                                 }
                             }
@@ -167,7 +136,7 @@ class Main {
                     }
                 }
             }
-            private static void levelUp(Gladiator gladiator) {
+            private static void levelUp() {
                 System.out.println("Level up!");
             }
 
@@ -217,6 +186,4 @@ class Main {
                 }
             }
         }
-
-
 
